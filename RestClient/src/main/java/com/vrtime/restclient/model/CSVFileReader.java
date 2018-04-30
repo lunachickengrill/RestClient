@@ -10,9 +10,6 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 
-import com.vrtime.restclient.InputReader;
-import com.vrtime.restclient.SSOSubAccount;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
@@ -79,12 +76,14 @@ public class CSVFileReader implements InputReader {
 	}
 
 	private void moveProcessedFiles(final Path path) {
-		Path done = Paths.get(getDone());
+		String fileName = path.getFileName().toString();
+
+		Path done = Paths.get(getDone(), fileName);
 		try {
-			logger.debug("Moving file: " + path.getFileName().toString());
-			Files.move(path, done, StandardCopyOption.ATOMIC_MOVE);
+			logger.info("Moving file: " + path.getFileName().toString());
+			Files.move(path, done, StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException ex) {
-			logger.error("Could not move file: " +  ex.getMessage());
+			logger.error("Could not move file: " + ex.getMessage());
 		}
 	}
 

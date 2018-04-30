@@ -1,4 +1,4 @@
-package com.vrtime.restclient;
+package com.vrtime.restclient.model;
 
 public class SSOSubAccount {
 
