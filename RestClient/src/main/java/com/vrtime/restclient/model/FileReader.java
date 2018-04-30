@@ -3,7 +3,6 @@ package com.vrtime.restclient.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.validator.internal.util.logging.LoggerFactory;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
