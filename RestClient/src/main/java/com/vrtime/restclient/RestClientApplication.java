@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
 
-import com.vrtime.restclient.model.FileReader;
+import com.vrtime.restclient.model.CSVFileReader;
 
 @SpringBootApplication
 public class RestClientApplication implements CommandLineRunner {
@@ -18,7 +18,7 @@ public class RestClientApplication implements CommandLineRunner {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private FileReader fileReader;
+	private CSVFileReader fileReader;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestClientApplication.class, args);
