@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
-import com.vrtime.restclient.model.CSVFileReader;
-import com.vrtime.restclient.model.InputReader;
+import com.vrtime.restclient.input.CSVFileReader;
+import com.vrtime.restclient.input.InputReader;
 
 @Configuration
 @PropertySource("classpath:application.properties")

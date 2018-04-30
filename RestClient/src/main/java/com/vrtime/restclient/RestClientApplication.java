@@ -8,11 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.CommandLineRunner;
 
-import com.vrtime.restclient.model.CSVFileReader;
-import com.vrtime.restclient.model.InputReader;
-import com.vrtime.restclient.model.SSOSubAccount;
+import com.vrtime.restclient.input.CSVFileReader;
+import com.vrtime.restclient.input.InputReader;
+import com.vrtime.restclient.shared.SSOSubAccount;
+
+import org.springframework.boot.CommandLineRunner;
 
 @SpringBootApplication
 public class RestClientApplication implements CommandLineRunner {

@@ -1,4 +1,4 @@
-package com.vrtime.restclient.model;
+package com.vrtime.restclient.input;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,6 +9,8 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
+
+import com.vrtime.restclient.shared.SSOSubAccount;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
