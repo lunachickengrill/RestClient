@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
-import com.vrtime.restclient.model.FileReader;
+import com.vrtime.restclient.InputReader;
+import com.vrtime.restclient.model.CSVFileReader;
 
 @Configuration
 @PropertySource("classpath:application.properties")
@@ -16,8 +17,8 @@ public class AppConfig {
 	Environment env;
 
 	@Bean
-	FileReader fileReader() {
-		return new FileReader(env.getProperty("source.directory"));
+	InputReader inputReader() {
+		return new CSVFileReader(env.getProperty("source.directory"), env.getProperty("source.done"));
 	}
 
 }

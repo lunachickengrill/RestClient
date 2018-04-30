@@ -18,7 +18,7 @@ public class RestClientApplication implements CommandLineRunner {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private CSVFileReader fileReader;
+	private InputReader inputReader;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestClientApplication.class, args);
@@ -28,12 +28,13 @@ public class RestClientApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 
-		logger.info("entering run method");
 
-		List<Path> path = fileReader.getPathToFiles();
+		List<SSOSubAccount> sso = inputReader.produceSubAccounts();
 
-		for (Path p : path) {
-			logger.info(p.toAbsolutePath().toString());
+
+		for (SSOSubAccount s : sso) {
+			logger.info(s.toString());
+
 		}
 
 	}
